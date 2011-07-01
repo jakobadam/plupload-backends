@@ -1,66 +1,27 @@
-Plupload Deploy - Drop-in deployment for Plupload
-=================================================
+Plupload Python Backend
+=======================
 
-What is Plupload Deploy
------------------------
+What Plupload Python Backend
+----------------------------
 
-You hate mingling with apache configuration? - so do I. This project
-provides a complete working ready to deploy solution for plupload. It
-uses Apache and mod_wsgi. 
+This project provides a complete working ready to deploy solution for
+plupload. 
 
 The backend is in Python and works for both the usual runtimes and the
 new applet runtime that support unlimited sized integrity checked
 uploads.
 
-How to run on Ubuntu Linux?
----------------------------
+Dependencies
+------------
 
-After you have cloned the project: (as root)
-  apt-get install python-werkzeug
-  ln -s {...}/plupload-deploy/ /srv/www/plupload
-  ln -s /srv/www/plupload/apache.conf /etc/apache2/sites-available/plupload
-  chown www-data:www-data {...}/plupload-deploy/uploads
-  a2ensite plupload
+This projects assumes that plupload and plupload-java-runtime is at
+the same directory level as this project. 
 
-Edit: /etc/hosts
-  127.0.0.1 localhost                                                                                     
-  127.0.0.1 localhost.plupload # add this line
+Setup
+-----
+  sudo apt-get install python-werkzeug
+  make 
 
-Then:
-  apache2ctl restart
-
-And:
-  Point browser to: http://localhost.plupload
-
-How to run on Fedora Linux?
----------------------------
-
-After you have cloned the project: (as root)
-  yum install mod_wsgi
-  yum install python-werkzeug
-  ln -s {...}/plupload-deploy/ /var/www/plupload
-  chown apache:apache {...}/plupload-deploy/uploads
-  nano /etc/httpd/conf/httpd.conf
-
-  a. Paste following virtual host info at very bottom of httpd.conf.  
-  The first virtual host should be set to whatever ServerName was originally configured into your main Apache install.  With this setup, you can listen for both addresses on the same port:
-
-   NameVirtualHost *:80
-   ServerName yourserver
-   
-   ServerName plupload.yourserver
-
-   WSGIPassAuthorization   On
-   WSGIScriptReloading     Off
-   WSGIDaemonProcess plupload threads=5
-   WSGIScriptAlias /upload /var/www/plupload/apache.wsgi
-
-   DocumentRoot /var/www/plupload/static
-   Alias /uploads /var/www/plupload/uploads
-   Options Indexes
-
-6. Add new A-address "plupload.yourserver" to your DNS configuration
-7. Direct your browser to http://plupload.yourserver
-
-
-
+Run
+---
+  python dev_appserver.py
