@@ -1,0 +1,6 @@
+public/applet
+public/css
+public/img
+public/js
+*.pyc
+uploads
