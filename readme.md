@@ -41,8 +41,9 @@ apache dir. On ubuntu something like this:
        sudo mv /etc/apache2.conf /etc/apache2.conf.bac 
        sudo ln -s /home/www/plupload-python-runtime/apache/apache2.conf /etc/apache2/apache2.conf
        sudo apache2ctl restart
-       Point browser to http://localhost/
 
-Note: The bundled apache configuration expects that the `plupload-python-backend` is checked out at
+Point browser to http://localhost/
+
+Note: The (bundled apache configuration)[https://github.com/jakobadam/plupload-python-backend/blob/master/apache/apache2.conf] expects that the `plupload-python-backend` is checked out at
 `/home/www/plupload-python-backend`. Change the paths in the configuration if it is checked out elsewhere.
 
