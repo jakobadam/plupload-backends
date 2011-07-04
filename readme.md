@@ -20,15 +20,15 @@ the same directory level as this project.
 
 Setup
 -----
-  sudo apt-get install python-werkzeug
-  make init
+        sudo apt-get install python-werkzeug
+        make init
 
 Run (local python server)
 -------------------------
 
 Development server for quick start:
-  python dev_appserver.py
-  point browser to http://localhost:8080/index.html
+            python dev_appserver.py
+            point browser to http://localhost:8080/index.html
 
 Run (apache)
 -----------
@@ -38,9 +38,9 @@ quick setup. You should take a backup of your existing
 configuration and symlink `apache2.conf` from this project into the
 apache dir. On ubuntu something like this:
 
-       $ sudo mv /etc/apache2.conf /etc/apache2.conf.bac 
-       $ sudo ln -s /home/www/plupload-python-runtime/apache/apache2.conf /etc/apache2/apache2.conf
-       $ sudo apache2ctl restart
+       sudo mv /etc/apache2.conf /etc/apache2.conf.bac 
+       sudo ln -s /home/www/plupload-python-runtime/apache/apache2.conf /etc/apache2/apache2.conf
+       sudo apache2ctl restart
        Point browser to http://localhost/
 
 Note: The bundled apache configuration expects that the `plupload-python-backend` is checked out at
