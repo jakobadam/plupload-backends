@@ -19,7 +19,7 @@ from werkzeug import secure_filename
 from werkzeug.exceptions import BadRequest
 from werkzeug.exceptions import HTTPException
 
-UPLOAD_DIR = os.path.join(os.path.dirname(__file__), 'uploads')
+UPLOAD_DIR = os.path.join(os.path.dirname(__file__), 'public', 'uploads')
 URLENCODED = 'application/x-www-form-urlencoded'
 
 def write_meta_information_to_file(meta_file, md5sum, chunk, chunks):
@@ -43,7 +43,7 @@ def write_meta_information_to_file(meta_file, md5sum, chunk, chunks):
         os.remove(path)
 
 def clean_filename(filename):
-    i = filename.rindex(".")
+    i = filename.rfind(".")
     if i != -1:
         filename = filename[0:i] + filename[i:].lower()
     return secure_filename(filename)
@@ -139,8 +139,6 @@ def probe(request):
 @Request.application
 def app(request):
     try:
-        if request.path == '/':
-            return Response(open('public/index.html'), mimetype='text/html')
         return upload(request)
     except HTTPException, e:
         return e
