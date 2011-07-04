@@ -44,6 +44,6 @@ apache dir. On ubuntu something like this:
 
 Point browser to http://localhost/
 
-Note: The (bundled apache configuration)[https://github.com/jakobadam/plupload-python-backend/blob/master/apache/apache2.conf] expects that the `plupload-python-backend` is checked out at
+Note: The [bundled apache configuration](https://github.com/jakobadam/plupload-python-backend/blob/master/apache/apache2.conf) expects that the `plupload-python-backend` is checked out at
 `/home/www/plupload-python-backend`. Change the paths in the configuration if it is checked out elsewhere.
 
