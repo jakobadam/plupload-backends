@@ -4,12 +4,12 @@ PLUPLOAD_PATH = ../plupload
 APPLET_JS_URL = https://raw.github.com/jakobadam/applet.js/master/applet.js
 
 build: 
+	mkdir -p public/applet
 	cd $(PLUPLOAD_JAVARUNTIME_PATH); ant
 	cp $(PLUPLOAD_JAVARUNTIME_PATH)/plupload.java.jar public/applet
 
-init:
+init: clean build
 	mkdir -p public/js
-	mkdir -p public/applet
 
 	ln -s ../$(PLUPLOAD_PATH)/src/javascript/jquery.plupload.queue/css public/css
 	ln -s ../$(PLUPLOAD_PATH)/src/javascript/jquery.plupload.queue/img public/img
