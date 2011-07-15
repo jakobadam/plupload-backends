@@ -32,7 +32,10 @@ $.ready(function() {
                  'z-index:1000',
                  'left:0px',
                  'height:30px'].join(';');
-    var warning = dojo.create('div', { style:style, innerHTML: 'Java is not present, please enable or download <a href="' + applet.java_url + '">here</a>'}, dojo.body());
+    var warning = dojo.create('div', { 
+      style:style, 
+      innerHTML: 'Java is not present, please enable or download <a href="' + applet.java_url + '">here</a>'
+      }, dojo.body());
   }
 
   $.query("#java_uploader").pluploadQueue({
