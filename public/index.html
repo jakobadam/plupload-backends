@@ -20,6 +20,21 @@ body {background: #9A7C5F;}
 <script>
 var $ = dojo;
 $.ready(function() {
+
+  // show warning if java not available
+  if(!applet.hasVersion('1.5')){
+    var style = ['background-color: #FDD',
+                 'font-weight:bold',
+                 'position:fixed',
+                 'top:0px',
+                 'width:100%',
+                 'text-align:center',
+                 'z-index:1000',
+                 'left:0px',
+                 'height:30px'].join(';');
+    var warning = dojo.create('div', { style:style, innerHTML: 'Java is not present, please enable or download <a href="' + applet.java_url + '">here</a>'}, dojo.body());
+  }
+
   $.query("#java_uploader").pluploadQueue({
     runtimes : 'java',
     url : '/upload',
