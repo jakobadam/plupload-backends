@@ -1,11 +1,11 @@
-Plupload Python Backend
-=======================
+Plupload Backends
+=================
 
-What is Plupload Python Backend
--------------------------------
+What is Plupload Backends?
+--------------------------
 
-Plupload Python Backend provides a complete working ready to apache deploy
-solution for plupload. 
+Plupload Backends provides complete working ready to apache deploy
+solutions for plupload. 
 
 The backend is in Python and works for both the usual runtimes and the
 [Plupload Java

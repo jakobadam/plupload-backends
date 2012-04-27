@@ -1,7 +1,7 @@
 PLUPLOAD_JAVARUNTIME_PATH = ../plupload-java-runtime
 PLUPLOAD_PATH = ../plupload
 
-APPLET_JS_URL = https://raw.github.com/jakobadam/applet.js/master/applet.js
+APPLET_JS_URL = https://raw.github.com/jakobadam/applet.js/master/java/applet.js
 
 build: 
 	mkdir -p public/applet
