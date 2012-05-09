@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import os
 
 os.environ['ROOT_PATH'] = os.path.abspath(os.path.dirname(__file__))
