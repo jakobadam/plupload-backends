@@ -42,7 +42,8 @@ $.ready(function() {
     runtimes : 'java',
     url : '/upload',
     chunk_size : '5mb',
-    java_applet_url: '/applet/plupload.java.jar'
+    java_applet_url: '/applet/plupload.java.jar',
+    log_level:/*LOG_LEVEL_DEBUG*/1
   });
 
   $.query("#html5_uploader").pluploadQueue({
