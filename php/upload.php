@@ -157,7 +157,7 @@ function probe(){
 }
 
 if($cleanup_dir){
-    delete_temp_files($cleanup_dir);
+    delete_temp_files($max_file_age);
 }
 
 echo upload();
