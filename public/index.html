@@ -3,89 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <link rel="stylesheet" href="css/jquery.plupload.queue.css" />
-<title>Plupload - Dojo Queue widget example</title>
+<title>Plupload - Dojo Queue widget examples</title>
 <style type="text/css">
 body {background: #9A7C5F;}
 </style>
-<script src="http://www.google.com/jsapi"></script>
-<script>
-  google.load("dojo", "1.6");
-</script>
-<script src="/js/plupload.js"></script>
-<script src="/js/applet.js"></script>
-<script src="/js/plupload.java.js"></script>
-<script src="/js/plupload.html4.js"></script>
-<script src="/js/plupload.html5.js"></script>
-<script src="/js/dojo.plupload.queue.js"></script>
-<script>
-var $ = dojo;
-$.ready(function() {
-
-  // show warning if java not available
-  if(!applet.hasVersion('1.5')){
-    var style = ['background-color: #FDD',
-                 'font-weight:bold',
-                 'position:fixed',
-                 'top:0px',
-                 'width:100%',
-                 'text-align:center',
-                 'z-index:1000',
-                 'left:0px',
-                 'height:30px'].join(';');
-    var warning = dojo.create('div', { 
-      style:style, 
-      innerHTML: 'Java is not present, please enable or download <a href="' + applet.java_url + '">here</a>'
-      }, dojo.body());
-  }
-
-  $.query("#java_uploader").pluploadQueue({
-    runtimes : 'java',
-    url : '/upload',
-    chunk_size : '5mb',
-    java_applet_url: '/applet/plupload.java.jar',
-    log_level:/*LOG_LEVEL_DEBUG*/1
-  });
-
-  $.query("#html5_uploader").pluploadQueue({
-    runtimes : 'html5',
-    url : '/upload',
-    max_file_size : '10mb',
-    chunk_size : '1mb',
-    unique_names : false
-  });
-
-  $.query("#html4_uploader").pluploadQueue({
-    runtimes : 'html4',
-    url : '/upload'
-  });
-});
-</script>
 </head>
 <body>
 
-<form method="post" action="dump.php">
-  <h1>Queue widget example</h1>
-
-  <p>Shows the Dojo Plupload Queue widget and under different runtimes.</p>
-
-  <div style="float: left; margin-right: 20px">
-    <h3>HTML 5 runtime</h3>
-    <div id="html5_uploader" style="width: 450px; height: 330px;">You browser doesn't support native upload. Try Firefox 3 or Safari 4.</div>
-  </div>
-
-  <div style="float: left; margin-right: 20px">
-    <h3>HTML 4 runtime</h3>
-    <div id="html4_uploader" style="width: 450px; height: 330px;"></div>
-  </div>
-
-  <div style="float: left; margin-right: 20px">
-    <h3>Java runtime</h3>
-    <div id="java_uploader" style="width: 450px; height: 330px;">You browser doesn't have Java installed.</div>
-  </div>
-
-  <br style="clear: both" />
-
-</form>
+Pick your backend:
+<ul>
+  <li><a href="index.php.html">PHP backend</a></li>
+  <li><a href="index.python.html">Python backend</a></li>
+</ul>
 
 </body>
 </html>
