@@ -11,7 +11,7 @@ Plupload Backends currently contains backends for Java, PHP and
 Python. The backends works for both the usual runtimes (html4, html5,
 etc.) and the [plupload java
 runtime](https://github.com/jakobadam/plupload-java-runtime) that
-support unlimited sized integrity checked uploads.
+supports unlimited sized integrity checked uploads.
 
 Dependencies
 ------------
@@ -37,8 +37,8 @@ Point browser to http://localhost:8080/index.html
 
 ### Run (apache) ###
 
-The project comes bundled with a apache configuration for quick setup.
-It uses mod wsgi:
+The project includes an apache configuration for quick setup.
+It uses mod_wsgi:
 
        sudo apt-get install libapache2-mod-wsgi
        sudo a2enmod wsgi
@@ -55,7 +55,7 @@ Enable the configuration:
 
 Point browser to http://localhost/
 
-Note: The [bundled apache configuration](https://github.com/jakobadam/plupload-backends/blob/master/apache/apache2.conf) expects that the `python-backend` is checked out at
+Note: The [bundled apache configuration](https://raw.github.com/jakobadam/plupload-backends/master/python/apache/apache2.conf) expects that the `python-backend` is checked out at
 `/srv/www/plupload-backends`. Change the paths in the apache configuration if it is checked out elsewhere.
 
 PHP
